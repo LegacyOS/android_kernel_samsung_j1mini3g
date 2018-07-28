@@ -246,11 +246,8 @@ dtb-$(CONFIG_MACH_SP7731GEA_QHD) += sprd-scx35_sp7731gea_qhd.dtb
 dtb-$(CONFIG_MACH_SP7731GEPIKE) += sprd-scx35_sp7731gepike.dtb
 dtb-$(CONFIG_MACH_SP7731GEA_FWVGA) += sprd-scx35_sp7731gea_fwvga.dtb
 dtb-$(CONFIG_MACH_SP7731GEAOPENPHONE) += sprd-scx35_sp7731geaopenphone.dtb
-dtb-$(CONFIG_MACH_TSHARKWSAMSUNG) += sprd-scx35_tsharkwsamsung.dtb
-dtb-$(CONFIG_MACH_PIKEAYOUNG2DTV) += sprd-scx35_pikeayoung2dtv.dtb
 dtb-$(CONFIG_MACH_CORE3) += sprd-scx35_core3.dtb
 dtb-$(CONFIG_MACH_SPX35LFPGA) += sprd-scx35l_sp9630fpga.dtb
-dtb-$(CONFIG_MACH_COREPRIMELITE) += sprd-scx35l_coreprimelite.dtb
 dtb-$(CONFIG_MACH_SHARKLS_Z3LTE) += sprd-scx35l_sharkls_z3lte.dtb
 dtb-$(CONFIG_MACH_SP9630EA3MN) += sprd-scx35l_sp9630ea3mn.dtb
 dtb-$(CONFIG_MACH_SP9630EA4MN) += sprd-scx35l_sp9630ea4mn.dtb
@@ -265,21 +262,8 @@ dtb-$(CONFIG_MACH_SP9830IEA_4M_H100) += sprd-scx35l_sp9830iea_4m_h100.dtb
 dtb-$(CONFIG_MACH_SP9820FPGA) += sprd-scx35l_sp9820fpga.dtb
 dtb-$(CONFIG_MACH_SP9820EA) += sprd-scx35l_sp9820ea.dtb
 dtb-$(CONFIG_MACH_TSHARK2TABE) += sprd-scx35_tshark2tabe.dtb
-dtb-$(CONFIG_MACH_GRANDPRIME3G_VE) += sprd-scx35_grandprime3g_ve.dtb
-dtb-$(CONFIG_MACH_J3_3G) += sprd-scx35_j3_3g.dtb
-dtb-$(CONFIG_MACH_J3X3G) += sprd-scx35_j3x3g.dtb \
-				sprd-scx35_j3x3g_rev00A2.dtb \
-				sprd-scx35_j3x3g_rev02.dtb
-dtb-$(CONFIG_MACH_GTEXSWIFI) += sprd-scx35_gtexswifi_rev00.dtb \
-				sprd-scx35_gtexswifi_rev02.dtb \
-				sprd-scx35_gtexswifi_rev03.dtb 
-dtb-$(CONFIG_MACH_GRANDPRIME_DTV) += sprd-scx35_grandprime_dtv.dtb
-dtb-$(CONFIG_MACH_COREPRIME3G_VE) += sprd-scx35_coreprime3g_ve.dtb
-dtb-$(CONFIG_MACH_TIZENZ3_3G) += sprd-scx35_tizenz3_3g.dtb
 dtb-$(CONFIG_MACH_SP7720EA) += sprd-scx20_sp7720ea.dtb
 dtb-$(CONFIG_MACH_SP7720EB) += sprd-scx20_sp7720eb.dtb
-dtb-$(CONFIG_MACH_PIKEB_J1MINI_3G) += sprd-pikeb_j1mini_3g.dtb
-dtb-$(CONFIG_MACH_PIKEB_J1_3G) += sprd-scx20_pikeb_j1_3g.dtb
 dtb-$(CONFIG_MACH_PIKEB_JIGBASE) += sprd-pikeb_jigbase_dt.dtb
 dtb-$(CONFIG_MACH_SP7720EB_PRIME) += sprd-scx20_sp7720eb_prime.dtb
 
@@ -287,13 +271,6 @@ dtb-$(CONFIG_MACH_J1MINI3G) += sprd-scx20_j1mini3g_r00.dtb \
 				sprd-scx20_j1mini3g_r01.dtb \
 				sprd-scx20_j1mini3g_r02.dtb \
 				sprd-scx20_j1mini3g_r03.dtb
-
-dtb-$(CONFIG_MACH_J1X3G) += sprd-scx20_j1x3g_r00.dtb \
-			    sprd-scx20_j1x3g_r01.dtb \
-			    sprd-scx20_j1x3g_r02.dtb \
-			    sprd-scx20_j1x3g_r03.dtb \
-			    sprd-scx20_j1x3g_r04.dtb \
-			    sprd-scx20_j1x3g_r05.dtb
 
 DTB_NAMES := $(subst $\",,$(CONFIG_BUILD_ARM_APPENDED_DTB_IMAGE_NAMES))
 ifneq ($(DTB_NAMES),)

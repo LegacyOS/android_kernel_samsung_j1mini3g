@@ -1406,11 +1406,6 @@ LOCAL int sprd_img_tx_stop(void* param)
 	struct dcam_dev          *dev = (struct dcam_dev*)param;
 	struct dcam_node         node;
 
-	ret = sprd_img_queue_init(&dev->queue);
-	if (unlikely(ret != 0)) {
-		printk("SPRD_IMG: Failed to init queue STOP\n");
-	}
-
 	memset((void*)&node, 0, sizeof(struct dcam_node));
 	node.irq_flag = IMG_TX_STOP;
 	ret = sprd_img_queue_write(&dev->queue, &node);
@@ -1670,12 +1665,10 @@ LOCAL int sprd_img_queue_init(struct dcam_queue *queue)
 {
 	if (NULL == queue)
 		return -EINVAL;
-	printk("SPRD_IMG: sprd_img_queue_init \n");
-	memset(&queue->node[0], 0, DCAM_QUEUE_LENGTH * sizeof(struct dcam_node));
+
+	memset(queue, 0, sizeof(*queue));
 	queue->write = &queue->node[0];
 	queue->read  = &queue->node[0];
-	queue->wcnt = 0;
-	queue->rcnt = 0;
 
 	return 0;
 }
@@ -1685,7 +1678,7 @@ LOCAL int sprd_img_queue_write(struct dcam_queue *queue, struct dcam_node *node)
 	struct dcam_node         *ori_node;
 	unsigned long                 lock_flag;
 
-	if (NULL == queue || NULL == node || NULL == queue->read || NULL == queue->write)
+	if (NULL == queue || NULL == node)
 		return -EINVAL;
 
 	if ( IMG_TX_STOP == node->irq_flag) {
@@ -1717,7 +1710,7 @@ LOCAL int sprd_img_queue_read(struct dcam_queue *queue, struct dcam_node *node)
 	int                      ret = DCAM_RTN_SUCCESS;
 	int                      flag = 0;
 
-	if (NULL == queue || NULL == node || NULL == queue->read || NULL == queue->write)
+	if (NULL == queue || NULL == node)
 		return -EINVAL;
 
 	DCAM_TRACE("SPRD_IMG: sprd_img_queue_read \n");

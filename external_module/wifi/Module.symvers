@@ -1,0 +1,2 @@
+0xe6654874	wlan_module_exit	/home/taehyo.song/perforce/workspace/j1_j3_3g/SM-J105B_LA_LAX/kernel/external_modules/wifi_module/sprdwl	EXPORT_SYMBOL_GPL
+0xae6655a1	wlan_module_init	/home/taehyo.song/perforce/workspace/j1_j3_3g/SM-J105B_LA_LAX/kernel/external_modules/wifi_module/sprdwl	EXPORT_SYMBOL_GPL
